@@ -1,30 +1,13 @@
-from modelo.clientedao import ClienteDAO
+from PyQt5 import QtWidgets
+import sys
+from load.load_ui_productos import Load_ui_productos
 
 def main():
-
-    #productodao = ProductoDAO()
-    #productodao.listarProductos()
-
-    clientedao = ClienteDAO()
-
-    clientedao.cliente.nombre="Diego"
-    clientedao.cliente.apellido="Prudente"
-    clientedao.cliente.correo_electronico="diego@hotmail.com"
-    clientedao.cliente.direccion="lomas de gran jardin"
-    clientedao.cliente.telefono="4771457384"
-    clientedao.cliente.fecha_registro="2025/10/14"
-
-    #clientedao.guardarCliente()
-    #clientedao.listarClientes()
-    #clientedao.buscarClientes("julio")
-    clientedao.eliminarCliente("Diego")
-
-
-
-
-
-  
+    app = QtWidgets.QApplication(sys.argv)
+    window = Load_ui_productos()
+    window.show()
+    sys.exit(app.exec_())
+    
 
 if __name__ == "__main__":
-
     main()
