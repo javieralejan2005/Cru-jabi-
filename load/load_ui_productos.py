@@ -46,7 +46,7 @@ class Load_ui_productos(QtWidgets.QMainWindow):
         #Botones para guardar, buscar, actualizar, eliminar y salir
         
         self.boton_accion_agregar.clicked.connect(self.guardar_producto)
-        self.boton_accion_actualizar.clicked.connect(self.llenar_tabla)
+        self.boton_accion_refrescar.clicked.connect(self.llenar_tabla)
         self.boton_accion_actualizar.clicked.connect(self.actualizar_producto)
         self.boton_accion_eliminar.clicked.connect(self.eliminar_producto)
         self.boton_accion_limpiar.clicked.connect(self.limpiar_formulario)
@@ -63,6 +63,15 @@ class Load_ui_productos(QtWidgets.QMainWindow):
         self.productodao.producto.existencia = int(self.existencia_agregar.text())
         self.productodao.producto.precio = float(self.precio_agregar.text())
 
+        self.productodao.insertarProducto()
+
+        self.mensaje.setText("El producto ha sido registrado!!!")
+        self.sku_agregar.setText("")
+        self.descripcion_agregar.setText("")
+        self.existencia_agregar.setText("")
+        self.precio_agregar.setText("")
+
+
     def buscar_producto(self):
         pass
 
@@ -73,10 +82,24 @@ class Load_ui_productos(QtWidgets.QMainWindow):
         pass
     
     def llenar_tabla(self):
-        pass
+        datos = self.productodao.listarProductos()
+        self.tabla_productos.setRowCount(len(datos))
+        fila = 0
+
+        for item in datos:
+            self.tabla_productos.setItem(fila,0,QtWidgets.QTableWidgetItem(item[1]))
+            self.tabla_productos.setItem(fila,1,QtWidgets.QTableWidgetItem(item[2]))
+            self.tabla_productos.setItem(fila,2,QtWidgets.QTableWidgetItem(str(item[3])))
+            self.tabla_productos.setItem(fila,3,QtWidgets.QTableWidgetItem(str(item[4])))
+            fila += 1
    
     def limpiar_formulario(self):
-        pass
+
+        self.sku_buscar.setText('')
+        self.descripcion_buscar.setText('')
+        self.existencia_buscar.setText('')
+        self.precio_buscar.setText('')
+
 
     def buscar_actualizar(self):
         pass
@@ -85,7 +108,20 @@ class Load_ui_productos(QtWidgets.QMainWindow):
         pass
 
     def buscar_buscar(self):
-        pass
+
+        self.productodao.producto.clave = self.sku_buscar.text()
+        datos = self.productodao.buscarProductos()
+        if len(datos)==0:
+            self.mensaje.setText("SKU no Existe!")
+        else:
+            self.descripcion_buscar.setText(datos[0][2])
+            self.existencia_buscar.setText(str(datos[0][3]))
+            self.precio_buscar.setText(str(datos[0][4]))
+
+        
+
+            
+            
        
 # 6.- mover ventana
 

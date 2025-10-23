@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>742</width>
-    <height>642</height>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -272,7 +272,7 @@ QToolTip {
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="mensaje">
          <property name="text">
           <string/>
          </property>

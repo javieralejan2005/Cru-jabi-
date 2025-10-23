@@ -19,19 +19,17 @@ class ProductoDAO:
         cursor.execute(sp)
         filas = cursor.fetchall()
 
-        for fila in filas:
-            print(fila)
-
         self.bd.cerrarConexionBD()
+        return filas
 
-    def guardarProducto(self):
+    def insertarProducto(self):
 
         # Abrir la conexión a la base de datos  
 
         self.bd.establecerConexionBD()
 
         cursor = self.bd.conexion.cursor()
-        sp = "exec [dbo].[sp_guardar_producto] @clave=?, @descripción=?, @existencia?, @precio=?"
+        sp = "exec [dbo].[sp_insertar_producto] @clave=?, @descripcion=?, @existencia=?, @precio=?"
         parametros = (self.producto.clave, self.producto.descripcion, self.producto.existencia, self.producto.precio)
         cursor.execute(sp, parametros)
         self.bd.conexion.commit()
@@ -86,5 +84,17 @@ class ProductoDAO:
 
         self.bd.cerrarConexionBD()
 
+    def buscarProductos(self):
+
+        self.bd.establecerConexionBD()
+
+        cursor = self.bd.conexion.cursor()
+        sp = "exec [dbo].[sp_buscar_producto] @clave =?"
+        param = [self.producto.clave]
+        cursor.execute(sp, param)
+        filas = cursor.fetchall()
+
+        self.bd.cerrarConexionBD()
+        return filas
 
 
