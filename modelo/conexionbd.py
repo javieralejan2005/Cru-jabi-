@@ -1,23 +1,24 @@
-import pyodbc 
+import pyodbc
 
-class ConexionBd: 
-
+class ConexionBd:
     def __init__(self):
-
-        self.conexion = ""
+        self.conexion = None
 
     def establecerConexionBD(self):
-        
-        try: 
-            self.conexion = pyodbc.connect("DRIVER={SQL Server};SERVER=SALAF008-08\SQLEXPRESS;DATABASE=bdsistema;UID=sa;PWD=Password01")
-
+        try:
+            # usar raw string para el backslash en el nombre del servidor
+            conn_str = r"DRIVER={SQL Server};SERVER=SALAF008-08\SQLEXPRESS;DATABASE=bdsistema;UID=sa;PWD=Password01"
+            self.conexion = pyodbc.connect(conn_str)
+            # opcional: self.conexion.autocommit = False
             print("Conexión exitosa!!!")
-
-        except Exception as error: 
-
-            print("Error en conexión: "+ str (error))
-
+        except Exception as error:
+            print("Error en conexión: " + str(error))
+            self.conexion = None
 
     def cerrarConexionBD(self):
-
-        self.conexion.close()
+        try:
+            if self.conexion:
+                self.conexion.close()
+                self.conexion = None
+        except Exception as e:
+            print("Error cerrando conexión:", e)
