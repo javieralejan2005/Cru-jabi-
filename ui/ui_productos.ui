@@ -292,9 +292,9 @@ QToolTip {
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="boton_salir">
+        <widget class="QPushButton" name="boton_regresar">
          <property name="text">
-          <string>Salir</string>
+          <string>regresar</string>
          </property>
          <property name="icon">
           <iconset>

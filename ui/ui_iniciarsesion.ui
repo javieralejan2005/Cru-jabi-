@@ -214,7 +214,7 @@ QToolTip {
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_6">
        <widget class="QWidget" name="widget" native="true">
@@ -316,18 +316,18 @@ QToolTip {
        <widget class="QPushButton" name="pushButton_5">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>370</y>
-          <width>131</width>
+          <x>300</x>
+          <y>430</y>
+          <width>191</width>
           <height>61</height>
          </rect>
         </property>
         <property name="text">
-         <string>Salir</string>
+         <string>Cerrar Sesión</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../../../Downloads/png-transparent-button-computer-icons-exit-angle-rectangle-logo.png</normaloff>../../../Downloads/png-transparent-button-computer-icons-exit-angle-rectangle-logo.png</iconset>
+          <normaloff>../../../Downloads/salir.png</normaloff>../../../Downloads/salir.png</iconset>
         </property>
         <property name="iconSize">
          <size>

@@ -99,9 +99,9 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="boton_salir">
+      <widget class="QPushButton" name="boton_regresar">
        <property name="text">
-        <string>Salir</string>
+        <string>Regresar</string>
        </property>
        <property name="icon">
         <iconset>
@@ -476,7 +476,7 @@ QToolTip {
 }</string>
           </property>
           <property name="currentIndex">
-           <number>5</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page_crear">
            <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -491,7 +491,7 @@ QToolTip {
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="text">
-                 <string>id_cliente</string>
+                 <string>Matricula</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -543,7 +543,7 @@ QToolTip {
               <item row="2" column="0">
                <widget class="QLabel" name="label_5">
                 <property name="text">
-                 <string>email</string>
+                 <string>Email</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -598,7 +598,7 @@ QToolTip {
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="text">
-                 <string>id_cliente</string>
+                 <string>Matricula</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -653,7 +653,7 @@ QToolTip {
               <item row="2" column="0">
                <widget class="QLabel" name="label_15">
                 <property name="text">
-                 <string>email</string>
+                 <string>Email</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -750,7 +750,7 @@ QToolTip {
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="text">
-                 <string>id_cliente</string>
+                 <string>Matricula</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -763,7 +763,7 @@ QToolTip {
               <item row="2" column="0">
                <widget class="QLabel" name="label_9">
                 <property name="text">
-                 <string>mail</string>
+                 <string>Email</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -890,7 +890,7 @@ QTableWidget QScrollBar::sub-line:vertical {
               </property>
               <column>
                <property name="text">
-                <string>Id_cliente</string>
+                <string>Matricula</string>
                </property>
               </column>
               <column>
@@ -927,7 +927,7 @@ QTableWidget QScrollBar::sub-line:vertical {
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="text">
-                 <string>id_cliente</string>
+                 <string>Matricula</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
